@@ -40,8 +40,8 @@
         /*Replace data of selected tabs store*/
         let totalData = [];
         iterate((file) => {
-          totalData.push(file.data);
-          updateMetaData({ data: totalData }, $selectedTab.id);
+          totalData.push(...file.data);
+          updateMetaData({ data: totalData, savedChange: false }, $selectedTab.id);
         });
         break;
       default:
@@ -78,7 +78,7 @@
     <div class="d-flex align-items-center justify-content-between py-2">
       <button class="btn btn-sm btn-secondary" on:click={onClose}>Cancel</button
       >
-      <button class="btn btn-sm btn-info" on:click={onImport}>Import</button>
+      <button class="btn btn-sm btn-info" on:click={onImport} disabled={selectedOption ? false : true}>Import</button>
     </div>
   </div>
 </container>

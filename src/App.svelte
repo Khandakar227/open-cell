@@ -12,7 +12,7 @@
     updateMetaData,
     getSheetById,
   } from "./utils/libs";
-  import { Files, selectedTab } from "./utils/stores";
+  import { Files, selectedTab, Data } from "./utils/stores";
 
   let showDragOps = false;
   let draggedFilesData = [/*{ id: "", data: "", path: "", sheetName: "" }*/];
@@ -97,6 +97,7 @@
 <svelte:body on:drop={onDrop} on:dragover={stopDefault} />
 <MenuBar>
   <MenuItem SubMenuItems={$Files}>File</MenuItem>
+  <MenuItem SubMenuItems={$Data}>Data</MenuItem>
 </MenuBar>
 
 <main class="pt-1">
@@ -113,7 +114,7 @@
       <TabList>
         {#each SHEETS as sheet (sheet.id)}
           <Tab onclose={() => removeTab(sheet.id)} id={sheet.id}>
-            <small> {sheet.sheetName} </small>
+            <small class={`position-relative ${sheet.savedChange == true ? "" : "not-saved"}`}> {sheet.sheetName} </small>
           </Tab>
         {/each}
       </TabList>

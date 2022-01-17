@@ -5,13 +5,19 @@ export const sheets = writable("[]");
 export const selectedTab = writable(null); //For Tabs
 export const selectedPanel = writable(null); //For Tabs
 
-//For menu bar
+/*For menu bar*/
 export const Files = writable([
   { name: "New", accelerator: "Ctrl + N", click: () => createSheet() },
   { name: "Open", accelerator: "Ctrl + O", click: () => open() },
   { name: "Save", accelerator: "Ctrl + S", click: () => { } },
   { name: "Save As", accelerator: "Ctrl + Shift + S", click: () => { } },
 ]);
+
+export const Data = writable([
+  {name: "Sort sheet", accelerator: "Ctrl + Q", click: () => {}}
+])
+/* Menu bar */
+
 
 const createSheet = (sheetData) => {
   const newSheetName = `NewSheet_${Date.now()}`;

@@ -1,4 +1,4 @@
-<div class="menubar d-flex gap-1 px-1">
+<div class="menubar d-flex gap-2 px-1">
 <slot></slot>
 </div>
 <style>

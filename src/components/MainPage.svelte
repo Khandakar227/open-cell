@@ -22,7 +22,7 @@
 </script>
 
 <main class="p-2 mx-auto mw-1200">
-  <button class="btn btn-info" on:click={createSheet}
+  <button class="btn btn-info" on:click={() =>createSheet()}
     >Create a new spreadsheet</button
   >
   <div class="my-2 text-center">

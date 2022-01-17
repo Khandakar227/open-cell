@@ -1,5 +1,4 @@
 const { ipcRenderer, contextBridge } = require("electron");
-const { readFile } = require("fs");
 const { parse } = require("papaparse");
 
 contextBridge.exposeInMainWorld('electron', {

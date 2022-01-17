@@ -609,6 +609,15 @@
   "resolved" "https://registry.npmjs.org/array-find-index/-/array-find-index-1.0.2.tgz"
   "version" "1.0.2"
 
+"array-sort@^1.0.0":
+  "integrity" "sha512-ihLeJkonmdiAsD7vpgN3CRcx2J2S0TiYW+IS/5zHBI7mKUq3ySvBdzzBfD236ubDBQFiiyG3SWCPc+msQ9KoYg=="
+  "resolved" "https://registry.npmjs.org/array-sort/-/array-sort-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "default-compare" "^1.0.0"
+    "get-value" "^2.0.6"
+    "kind-of" "^5.0.2"
+
 "asar@^2.0.1":
   "integrity" "sha512-d2Ovma+bfqNpvBzY/KU8oPY67ZworixTpkjSx0PCXnQi67c2cXmssaTxpFDUM0ttopXoGx/KRxNg/GDThYbXQA=="
   "resolved" "https://registry.npmjs.org/asar/-/asar-2.1.0.tgz"
@@ -1199,6 +1208,13 @@
   "integrity" "sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg=="
   "resolved" "https://registry.npmjs.org/deepmerge/-/deepmerge-4.2.2.tgz"
   "version" "4.2.2"
+
+"default-compare@^1.0.0":
+  "integrity" "sha512-QWfXlM0EkAbqOCbD/6HjdwT19j7WCkMyiRhWilc4H9/5h/RzTF9gv5LYh1+CmDV5d1rki6KAWLtQale0xt20eQ=="
+  "resolved" "https://registry.npmjs.org/default-compare/-/default-compare-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "kind-of" "^5.0.2"
 
 "defaults@^1.0.3":
   "integrity" "sha1-xlYFHpgX2f8I7YgUd/P+QBnz730="
@@ -1834,6 +1850,11 @@
   dependencies:
     "pump" "^3.0.0"
 
+"get-value@^2.0.6":
+  "integrity" "sha1-3BXKHGcjh8p2vTesCjlbogQqLCg="
+  "resolved" "https://registry.npmjs.org/get-value/-/get-value-2.0.6.tgz"
+  "version" "2.0.6"
+
 "getpass@^0.1.1":
   "integrity" "sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo="
   "resolved" "https://registry.npmjs.org/getpass/-/getpass-0.1.7.tgz"
@@ -2353,6 +2374,11 @@
   "version" "4.0.4"
   dependencies:
     "json-buffer" "3.0.1"
+
+"kind-of@^5.0.2":
+  "integrity" "sha512-NGEErnH6F2vUuXDh+OlbcKW7/wOcfdRHaZ7VWtqCztfHri/++YKmP51OdWeGPuqCOba6kk2OTe5d02VmTB80Pw=="
+  "resolved" "https://registry.npmjs.org/kind-of/-/kind-of-5.1.0.tgz"
+  "version" "5.1.0"
 
 "kleur@^4.1.4":
   "integrity" "sha512-8QADVssbrFjivHWQU7KkMgptGTl6WAcSdlbBPY4uNF+mWr6DGcKrvY2w4FQJoXch7+fKMjj0dRrL75vk3k23OA=="

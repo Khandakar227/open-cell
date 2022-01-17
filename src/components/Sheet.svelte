@@ -1,5 +1,6 @@
 <script>
   import { updateMetaData } from "../utils/libs";
+  import sort from "array-sort";
 
   export let data = [[]];
   export let sheetName = "";
@@ -55,11 +56,15 @@
     else return "";
   }
 
+function sortData (index=0) {
+  updateMetaData({data: sort(data, index)}, id)
+}
   $:console.log(data)
 </script>
 
 <section {id}>
   <div class="pt-2">
+    <button on:click={sortData}>Sort</button>
     <form class="py-1 my-1" on:submit={changeName}>
       <input type="text" bind:value={sheetName} class="sheet-name" />
       <button type="submit" class="btn btn-sm btn-info"> Change </button>

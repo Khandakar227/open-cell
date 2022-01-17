@@ -53,7 +53,7 @@ app.on('activate', () => {
 // code. You can also put them in separate files and import them here.
 ipcMain.on("save", (e, sheet) => {
   if (sheet.path && !sheet.saveAs) {
-    writeFile(path, parseData(sheet.data), (err) => {
+    writeFile(sheet.path, parseData(sheet.data), (err) => {
       if (err) {
         console.log(err)
         return

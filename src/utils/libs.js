@@ -6,23 +6,17 @@ export const checkExtension = (filename = "", extensions = []) => {
   return extensions.includes(parts[parts.length - 1])
 }
 
-export const createSheet = (sheet = { id: "", data: [[]], sheetName: "", path: "" }) => {
-  const newSheetName = sheet.sheetName || `NewSheet_${Date.now()}`;
-  console.log(sheet.data)
-  const sheetsDetail = {
-    id: sheet.id || Date.now(),
-    sheetName: newSheetName,
-    data: sheet.data,
-    path: sheet.path || "",
-    savedChange: sheet.data ? true : false
-  };
-
-  if (get(sheets) === "[]")
-    sheets.set(JSON.stringify([sheetsDetail]));
+export const createSheet = (
+  sheet = {
+    id: Date.now(), data: [[]], sheetName: `NewSheet_${Date.now()}`, path: "", savedChange: false,
+  }) => {
+  if (get(sheets) === "[]") {
+    sheets.set(JSON.stringify([sheet]));
+  }
   else {
     sheets.update(v => {
       let initVal = JSON.parse(v);
-      initVal.push(sheetsDetail);
+      initVal.push(sheet);
       return JSON.stringify(initVal)
     })
   }
@@ -66,7 +60,8 @@ export const appendData = (id, data) => {
     let initVal = JSON.parse(v);
     for (let x = 0; x < initVal.length; x++) {
       if (initVal[x].id === id) {
-        initVal[x].data.push(...data)
+        initVal[x].data.push(...data);
+        initVal[x].savedChange = false;
       }
     }
     return JSON.stringify(initVal)
